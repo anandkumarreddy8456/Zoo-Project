@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+</head>
+<body>
+<div>
+	<div class="container" align="center">
+		<div align="center">
+			<h3>Create New Animal</h3>
+		</div>
+		<div class="col-sm-4">
+			<form action="#" th:action="@{/Animal/save}" th:objects="${animal}" method="Post">
+				<div align="center">
+					<tr>
+						<label>Animal Name</label>
+						<td><input type="hidden" th:field="*{animal.id}"/>
+						<input type="text" th:field="*{animal.animalname}" class="form-control" placeholder="Animal Name"></td>
+				</div>
+				<div align="center">
+					<tr>
+						<label>Animal Type</label>
+						<td><input type="text" th:field="*{animal.animaltype}" class="form-control" placeholder="Animal Type"></td>
+					</tr>
+					</div>
+					<br>
+				<div>
+				<tr>
+					<td colspan="2"><input type="submit" class="btn btn-info" value="Save"></td>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

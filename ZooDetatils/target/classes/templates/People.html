@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+</head>
+<body>
+	<div>
+	<h2>Children Viewing Zoo Place</h2>
+	<tr>
+		<div align="left">
+			<a th:href='@{People/addpeople/}'><h3>Add New Children</h3></a>
+		</div>
+		<div align="left">
+			<a th:href='@{/index/}'>Home Page</a>
+		</div>
+		</tr>
+		<div class="col-sm-8" align="left">
+		<div class="pannel-body" align="center">
+		<table class="table">
+		<table class="thead-dark">
+		<thead>
+			<tr>
+			<th>Children Id</th>
+			<th> Children Name</th>
+			<th>Favourite Animal Name</th>
+			<th>Animal Type</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="people :${listpeople}">
+		<td th:text="${people.id}">Children id</td>
+		<td th:text="${people.peoplename}">PeopleName</td>
+		<td th:text="${people.favanimal}">Favorite Animal</td>
+			<td th:text="${people.animaltype}">Favorite Type</td>
+		<td>
+			<a th:href="@{'/People/edit/'+${people.id}}">Edit</a>
+		</td>
+		<td>
+			<a th:href="@{'/People/delete/' +${people.id}}">Delete</a>
+		</td>
+		</tbody>
+		</table>
+		</table>
+		</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+</head>
+<body>
+	<div align="center">
+	<h1>Create New Children</h1>
+	<br>
+	<div class="col-sm-5">
+	<form action="#" th:action="@{/People/save}" th:object="${people}" method="Post">
+		<div align="center">
+			<tr>
+			<label class="form-label">Children Name :</label>
+			<td>
+				<input type="hidden" th:field="*{id}"/>
+				<input type="text" th:field="*{peoplename}" class="form-control" placeholder="Enter Children Name"/>
+				</td>
+				</tr>
+		</div><br>
+		<div align="center">
+			<tr>
+			<label class="form-label">Favourite Animal</label>
+			<td>
+				<select name="favanimal" id="animal"class="form-control">
+					<option th:each="animal :${listanimal}"
+							th:value="${animal.animalname}"
+							th:text="${animal.animalname}">
+							</option>
+				</select>
+				</td>
+				</tr>
+		</div><br>
+		<div align="center">
+	<tr>
+		<label class="form-label">Animal Type</label>
+		<td>
+			<input type="text" th:field="*{animaltype}" class="form-control" plcaceholder="Enter Animal Type">
+			</td>
+			</tr>
+			</div>
+			<br>
+			<tr>
+			<td colspan="2"><button type="submit" class="btn btn-info">Save</button></td>
+			</tr>
+
+	</form>
+	</div>
+	</div>
+
+</body>
+</html>

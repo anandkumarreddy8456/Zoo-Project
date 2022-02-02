@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+
+<html lang="en" xmlns="http://www.w3.org/1000/xhtml">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<head th:fragment="header"></head>
+
+<body>
+	<div th:fragment="navbar">
+	<div class="jumbotron text-center" style="margin-bottom:0">
+		<h2>Zoo For Children </h2>
+		</div>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Zoo Details</a>
+			</div>
+			<div class="collapse brand-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+			<li class="active"><a th:href="@{'/index/'}">Home</a></li>
+			<li ><a th:href="@{'/Animal'}">Animal Details</a></li>
+			<li ><a th:href="@{'/People'}">People</a></li>
+			</ul>
+			</div>
+			</div>
+		</nav>
+		</div>
+</body>
+</html>

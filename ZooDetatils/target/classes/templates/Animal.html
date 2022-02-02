@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+</head>
+<body>
+<div>
+	<div class="container">
+	<div align="center"><h3>Animal Details</h3></div>
+	<div><h3>
+		<a th:href='@{/Animal/addAnimal}'>Add new Animal</a>
+	</h3>
+	<div><h3>
+		<a th:href='@{/index}'>Back to Home Page</a>
+	</h3>
+	<div>
+		<div>
+		<div class="col-sm-5" align="center">
+				<div class="pannel-body" align="center" >
+					<table class="table">
+						<thead class=th:dark>
+							<th>Animal Id</th>
+							<th>Animal Name</th>
+							<th>Animal Type</th>
+							<th> Edit</th>
+							<th>Delete</th>
+						</thead>
+						<tbody>
+							<tr th:each="animal :${listanimal}">
+							<td th:text="${animal.id}">Animal id</td>
+							<td th:text="${animal.animalname}">Animal Name</td>
+							<td th:text="${animal.animaltype}">Animal Type</td>
+							<td>
+								<a th:href="@{'/Animal/edit/' +${animal.id}}">Edit</a>
+							</td>
+							<td>
+								<a th:href="@{'/Animal/delete/' +${animal.id}}">Delete</a></td></tr>
+						</tbody>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
